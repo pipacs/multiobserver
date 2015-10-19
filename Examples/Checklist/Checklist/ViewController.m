@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  ObserveMany
+//  Checklist
 //
 //  Created by Akos Polster on 18/10/15.
 //  Copyright © 2015 Akos Polster. All rights reserved.
@@ -35,15 +35,27 @@
     [self.surgeonSwitch  addTarget:self action:@selector(handleSwitch:) forControlEvents:UIControlEventValueChanged];
 
     self.multiObserver = [[PIMultiObserver alloc] init];
+    
+    // Enable the "Launch" button if all subsystems are go, disable otherwise
     [self.multiObserver observeAnd:@[
         self, @"booster",
         self, @"retro",
         self, @"fido",
         self, @"guidance",
         self, @"surgeon"] block:^(BOOL combinedValue) {
-            NSLog(@"MONotificationBlock: %@", combinedValue? @"yes": @"no");
             self.launchButton.hidden = !combinedValue;
         }];
+    
+    // Log every "all systems go" events
+    [self.multiObserver observeAllYes:@[
+        self, @"booster",
+        self, @"retro",
+        self, @"fido",
+        self, @"guidance",
+        self, @"surgeon"] block:^(BOOL combinedValue) {
+            NSLog(@"All systems go!");
+        }];
+    
 }
 
 - (void)handleSwitch:(id)sender {
