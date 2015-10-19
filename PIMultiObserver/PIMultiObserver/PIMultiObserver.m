@@ -77,8 +77,7 @@ static void * const PIMOContext = (void *)&PIMOContext;
     for (NSInteger i = 0; i < objectsAndPaths.count; i += 2) {
         NSObject *object = objectsAndPaths[i];
         NSString *keyPath = objectsAndPaths[i + 1];
-        BOOL result = [[object valueForKeyPath:keyPath] boolValue];
-        combinedResult &= result;
+        combinedResult &= [[object valueForKeyPath:keyPath] boolValue];
     }
     PIMONotificationBlock block = observation[@"b"];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -92,8 +91,10 @@ static void * const PIMOContext = (void *)&PIMOContext;
     for (NSInteger i = 0; i < objectsAndPaths.count; i += 2) {
         NSObject *object = objectsAndPaths[i];
         NSString *keyPath = objectsAndPaths[i + 1];
-        BOOL result = [[object valueForKeyPath:keyPath] boolValue];
-        combinedResult &= result;
+        combinedResult &= [[object valueForKeyPath:keyPath] boolValue];
+        if (!combinedResult) {
+            break;
+        }
     }
     if (combinedResult) {
         PIMONotificationBlock block = observation[@"b"];
