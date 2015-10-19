@@ -23,13 +23,13 @@ The controller is the object that manages multi-observations. To create:
     PIMultiObserver *multiObserver = [[PIMultiObserver alloc] init];
     
 
-### observeAnd: Observing The AND Combination Of Many Properties
+### observeAnd: Observing The AND Combination Of Properties
 
-The method *observeAnd* takes a list of properties (objects and key paths) to observe, and a notification block. The block will be called whenever any of the properties change, with a Boolean parameter which is the AND combination of the current value of all observed properties:
+The method *observeAnd* takes a list of properties (objects and key paths) to observe, and a notification block. The block will be called whenever any of the properties change, with a Boolean parameter which is the AND combination of the current values of the observed properties:
 
     - (void)observeAnd:(NSArray *)objectsAndKeyPaths block:(PIMONotificationBlock)block;
 
-The example app *Checklist* is using this method to observe a set of rocket launch subsystems (think Apollo 13), in order to enable a "launch" button, when all subsystems are ready, but disable the button otherwise:
+The example app *Checklist* is using this method to observe a set of rocket launch systems (think Apollo 13), in order to enable a "launch" button, when all subsystems are ready, but disable the button otherwise:
 
     [self.multiObserver observeAnd:@[
         self, @"booster",
@@ -47,7 +47,7 @@ The method *observeAllYes* takes a list of properties to observe and a notificat
 
     - (void)observerAllYes:(NSArray *)objectsAndKeyPaths block:(PIMONotificationBlock)block;
     
-The example app *Checklist* is using this method to log an "All systems go!" message whenever all launch subsystems become ready:
+The example app *Checklist* is using this method to log an "All systems go!" message whenever all rocket launch systems become ready:
 
     [self.multiObserver observeAllYes:@[
         self, @"booster",
@@ -62,6 +62,8 @@ The example app *Checklist* is using this method to log an "All systems go!" mes
 ## Implementation Details
 
 * Multi-observations are implemented using Cocoa key-value observations
+
+* After setting up a multi-observation, the notification block is called immediately, if the evaluation criteria is met
 
 * Upon *dealloc* the controller removes all observations
 
