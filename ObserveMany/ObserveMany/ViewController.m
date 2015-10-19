@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 typedef void (^MONotificationBlock)(BOOL combinedValue);
+static void * const MOContext = (void *)&MOContext;
 
 @interface MultiObserver : NSObject
 @property NSMutableDictionary *observations;
@@ -34,7 +35,7 @@ typedef void (^MONotificationBlock)(BOOL combinedValue);
         NSMutableArray *currentValues = self.observations[key];
         if (!currentValues) {
             NSLog(@"First observer for %@ %@", object, path);
-            [object addObserver:self forKeyPath:path options:0 context:0];
+            [object addObserver:self forKeyPath:path options:0 context:MOContext];
             self.observations[key] = [NSMutableArray arrayWithObject:value];
         } else {
             [currentValues addObject:value];
@@ -44,6 +45,9 @@ typedef void (^MONotificationBlock)(BOOL combinedValue);
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if (context != MOContext) {
+        return;
+    }
     NSLog(@"observeValueForKeyPath: %@ of object %@", keyPath, object);
     NSDictionary *key = @{@"o": object, @"p": keyPath};
     for (NSDictionary *observation in self.observations[key]) {
@@ -56,10 +60,10 @@ typedef void (^MONotificationBlock)(BOOL combinedValue);
     NSArray *objectsAndPaths = observation[@"op"];
     BOOL combinedResult = YES;
     for (NSInteger i = 0; i < objectsAndPaths.count; i += 2) {
-        NSObject *o = objectsAndPaths[i];
-        NSString *kp = objectsAndPaths[i + 1];
-        BOOL result = [[o valueForKeyPath:kp] boolValue];
-        NSLog(@" %@ %@: %@", o, kp, result? @"yes": @"no");
+        NSObject *object = objectsAndPaths[i];
+        NSString *keyPath = objectsAndPaths[i + 1];
+        BOOL result = [[object valueForKeyPath:keyPath] boolValue];
+        NSLog(@" %@ %@: %@", object, keyPath, result? @"yes": @"no");
         combinedResult &= result;
     }
     MONotificationBlock block = observation[@"b"];
@@ -69,7 +73,16 @@ typedef void (^MONotificationBlock)(BOOL combinedValue);
 }
 
 - (void)dealloc {
-    // FIXME: Remove observers
+    for (NSDictionary *key in self.observations.allKeys) {
+        NSObject *object = key[@"o"];
+        NSString *keyPath = key[@"p"];
+        @try {
+            [object removeObserver:self forKeyPath:keyPath context:MOContext];
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Internal error removing observer from %@, key path %@: %@", object, keyPath, exception);
+        }
+    }
 }
 
 @end
