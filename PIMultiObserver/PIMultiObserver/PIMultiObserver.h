@@ -18,8 +18,10 @@ typedef void (^PIMONotificationBlock)(BOOL combinedValue);
 
 /// Observe the combined AND value of a series of objects and paths
 ///
-/// @param objectsAndPath List of objects and key paths, where even items are NSObjects, odd items are key path NSStrings
+/// @param objectsAndKeyPaths List of objects and key paths: even items are NSObjects, odd items are key path NSStrings
 /// @param block Notification block to be called with the combined AND value of the observed properties, whenever any property changes
-- (void)observeAnd:(NSArray *)objectsAndPaths block:(PIMONotificationBlock)block;
+- (void)observeAnd:(NSArray *)objectsAndKeyPaths block:(PIMONotificationBlock)block;
+
+- (void)observeAllYes:(NSArray *)objectsAndKeyPaths block:(PIMONotificationBlock)block;
 
 @end

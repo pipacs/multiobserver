@@ -15,6 +15,7 @@
 		795A28BB1BD4E51900910512 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 795A28B61BD4E51900910512 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		795A28BC1BD4E51900910512 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 795A28B71BD4E51900910512 /* main.m */; settings = {ASSET_TAGS = (); }; };
 		795A28BE1BD4E54000910512 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 795A28BD1BD4E54000910512 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
+		79871EFE1BD4EB4B0047295D /* libPIMultiObserver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79871EFD1BD4EB4B0047295D /* libPIMultiObserver.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		795A28B61BD4E51900910512 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Checklist/Info.plist; sourceTree = SOURCE_ROOT; };
 		795A28B71BD4E51900910512 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Checklist/main.m; sourceTree = SOURCE_ROOT; };
 		795A28BD1BD4E54000910512 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
+		79871EFD1BD4EB4B0047295D /* libPIMultiObserver.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPIMultiObserver.a; path = "../../PIMultiObserver/build/Debug-iphoneos/libPIMultiObserver.a"; sourceTree = "<group>"; };
 		96D3A8E41BD3C8680032029A /* Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -36,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79871EFE1BD4EB4B0047295D /* libPIMultiObserver.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +58,7 @@
 		96D3A8DB1BD3C8680032029A = {
 			isa = PBXGroup;
 			children = (
+				79871EFD1BD4EB4B0047295D /* libPIMultiObserver.a */,
 				96D3A8E61BD3C8680032029A /* Checklist */,
 				96D3A8E51BD3C8680032029A /* Products */,
 			);
