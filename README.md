@@ -22,8 +22,6 @@ The controller is the object that manages multi-observations. To create:
     
     PIMultiObserver *multiObserver = [[PIMultiObserver alloc] init];
     
-Upon *dealloc*, the controller will remove all observations.
-
 
 ### observeAnd: Observing The AND Combination Of Many Properties
 
@@ -65,7 +63,7 @@ The example app *Checklist* is using this method to log an "All systems go!" mes
 
 * Multi-observations are implemented using Cocoa key-value observations
 
-* Upon *dealloc* the controller will remove all observations
+* Upon *dealloc* the controller removes all observations
 
 * Notification blocks are always called on the main thread
 
