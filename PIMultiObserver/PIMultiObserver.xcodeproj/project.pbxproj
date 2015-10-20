@@ -9,7 +9,19 @@
 /* Begin PBXBuildFile section */
 		79E424801BD4DDB0007AC193 /* PIMultiObserver.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 79E4247F1BD4DDB0007AC193 /* PIMultiObserver.h */; };
 		79E424821BD4DDB0007AC193 /* PIMultiObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 79E424811BD4DDB0007AC193 /* PIMultiObserver.m */; };
+		79FB862D1BD6627000706D74 /* PIMultiObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FB862C1BD6627000706D74 /* PIMultiObserverTests.m */; };
+		79FB862F1BD6627000706D74 /* libPIMultiObserver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79FB86301BD6627000706D74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79E424741BD4DDB0007AC193 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79E4247B1BD4DDB0007AC193;
+			remoteInfo = PIMultiObserver;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		79E4247A1BD4DDB0007AC193 /* CopyFiles */ = {
@@ -28,6 +40,9 @@
 		79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPIMultiObserver.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E4247F1BD4DDB0007AC193 /* PIMultiObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIMultiObserver.h; sourceTree = "<group>"; };
 		79E424811BD4DDB0007AC193 /* PIMultiObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIMultiObserver.m; sourceTree = "<group>"; };
+		79FB862A1BD6627000706D74 /* PIMultiObserverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PIMultiObserverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79FB862C1BD6627000706D74 /* PIMultiObserverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIMultiObserverTests.m; sourceTree = "<group>"; };
+		79FB862E1BD6627000706D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +53,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79FB86271BD6627000706D74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79FB862F1BD6627000706D74 /* libPIMultiObserver.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -45,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				79E4247E1BD4DDB0007AC193 /* PIMultiObserver */,
+				79FB862B1BD6627000706D74 /* PIMultiObserverTests */,
 				79E4247D1BD4DDB0007AC193 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */,
+				79FB862A1BD6627000706D74 /* PIMultiObserverTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +89,15 @@
 				79E424811BD4DDB0007AC193 /* PIMultiObserver.m */,
 			);
 			path = PIMultiObserver;
+			sourceTree = "<group>";
+		};
+		79FB862B1BD6627000706D74 /* PIMultiObserverTests */ = {
+			isa = PBXGroup;
+			children = (
+				79FB862C1BD6627000706D74 /* PIMultiObserverTests.m */,
+				79FB862E1BD6627000706D74 /* Info.plist */,
+			);
+			path = PIMultiObserverTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +120,24 @@
 			productReference = 79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		79FB86291BD6627000706D74 /* PIMultiObserverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79FB86341BD6627000706D74 /* Build configuration list for PBXNativeTarget "PIMultiObserverTests" */;
+			buildPhases = (
+				79FB86261BD6627000706D74 /* Sources */,
+				79FB86271BD6627000706D74 /* Frameworks */,
+				79FB86281BD6627000706D74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79FB86311BD6627000706D74 /* PBXTargetDependency */,
+			);
+			name = PIMultiObserverTests;
+			productName = PIMultiObserverTests;
+			productReference = 79FB862A1BD6627000706D74 /* PIMultiObserverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -96,6 +148,9 @@
 				ORGANIZATIONNAME = "Akos Polster";
 				TargetAttributes = {
 					79E4247B1BD4DDB0007AC193 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					79FB86291BD6627000706D74 = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
 				};
@@ -113,9 +168,20 @@
 			projectRoot = "";
 			targets = (
 				79E4247B1BD4DDB0007AC193 /* PIMultiObserver */,
+				79FB86291BD6627000706D74 /* PIMultiObserverTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79FB86281BD6627000706D74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		79E424781BD4DDB0007AC193 /* Sources */ = {
@@ -126,7 +192,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		79FB86261BD6627000706D74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79FB862D1BD6627000706D74 /* PIMultiObserverTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79FB86311BD6627000706D74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79E4247B1BD4DDB0007AC193 /* PIMultiObserver */;
+			targetProxy = 79FB86301BD6627000706D74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		79E424831BD4DDB0007AC193 /* Debug */ = {
@@ -225,6 +307,26 @@
 			};
 			name = Release;
 		};
+		79FB86321BD6627000706D74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PIMultiObserverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pipacs.PIMultiObserverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		79FB86331BD6627000706D74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PIMultiObserverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pipacs.PIMultiObserverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -242,6 +344,15 @@
 			buildConfigurations = (
 				79E424861BD4DDB0007AC193 /* Debug */,
 				79E424871BD4DDB0007AC193 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79FB86341BD6627000706D74 /* Build configuration list for PBXNativeTarget "PIMultiObserverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79FB86321BD6627000706D74 /* Debug */,
+				79FB86331BD6627000706D74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
