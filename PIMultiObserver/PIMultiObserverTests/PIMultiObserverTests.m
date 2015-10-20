@@ -46,6 +46,7 @@
     
     self.bool2 = YES;
     [self waitForExpectationsWithTimeout:1 handler:nil];
+    
     XCTAssert(notificationCount == 2);
     XCTAssert([results[0] boolValue] == NO);
     XCTAssert([results[1] boolValue] == YES);
@@ -56,20 +57,19 @@
     XCTestExpectation *expectation = [self expectationWithDescription:@"Notification"];
     self.bool1 = YES;
     self.bool2 = NO;
-    __block int notificationCount = 0;
     __block NSMutableArray *results = [NSMutableArray array];
     PIMultiObserver *mo = [[PIMultiObserver alloc] init];
     [mo observeAllYes:@[self, @"bool1", self, @"bool2"] block:^(BOOL combinedValue) {
         [expectation fulfill];
         [results addObject:@(combinedValue)];
-        notificationCount++;
     }];
     
     self.bool1 = NO;
     self.bool2 = YES;
     self.bool1 = YES;
     [self waitForExpectationsWithTimeout:1 handler:nil];
-    XCTAssert(notificationCount == 1);
+    
+    XCTAssert(results.count == 1);
     XCTAssert([results[0] boolValue] == YES);
 }
 
