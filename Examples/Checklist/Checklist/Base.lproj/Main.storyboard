@@ -72,10 +72,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MU0-dp-H5s">
-                                <rect key="frame" x="50" y="242" width="219" height="30"/>
+                                <rect key="frame" x="50" y="296" width="219" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Launch"/>
+                                <state key="normal" title="Launch!"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TEMP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeN-Lo-rBv">
+                                <rect key="frame" x="20" y="228" width="119" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="65" minValue="20" maxValue="110" translatesAutoresizingMaskIntoConstraints="NO" id="agi-26-GnH">
+                                <rect key="frame" x="145" y="224" width="157" height="31"/>
+                                <animations/>
+                            </slider>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -88,6 +99,8 @@
                         <outlet property="launchButton" destination="MU0-dp-H5s" id="oAm-7E-Vkl"/>
                         <outlet property="retroSwitch" destination="ITz-aL-Vfd" id="grx-12-cEA"/>
                         <outlet property="surgeonSwitch" destination="KTJ-CS-AKB" id="4K2-oH-5iX"/>
+                        <outlet property="tempLabel" destination="JeN-Lo-rBv" id="4bE-Jp-hwj"/>
+                        <outlet property="tempSlider" destination="agi-26-GnH" id="DLX-E4-45s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
