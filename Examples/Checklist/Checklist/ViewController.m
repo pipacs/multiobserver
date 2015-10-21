@@ -38,24 +38,23 @@
     
     // Enable the "Launch" button if all subsystems are go, disable otherwise
     [self.multiObserver observeAnd:@[
-        self, @"booster",
-        self, @"retro",
-        self, @"fido",
-        self, @"guidance",
-        self, @"surgeon"] block:^(BOOL combinedValue) {
+        [PIObserver observerOf:self keyPath:@"booster"],
+        [PIObserver observerOf:self keyPath:@"retro"],
+        [PIObserver observerOf:self keyPath:@"fido"],
+        [PIObserver observerOf:self keyPath:@"guidance"],
+        [PIObserver observerOf:self keyPath:@"surgeon"]] block:^(BOOL combinedValue) {
             self.launchButton.hidden = !combinedValue;
         }];
     
     // Log every "all systems go" events
     [self.multiObserver observeAllYes:@[
-        self, @"booster",
-        self, @"retro",
-        self, @"fido",
-        self, @"guidance",
-        self, @"surgeon"] block:^(BOOL combinedValue) {
+        [PIObserver observerOf:self keyPath:@"booster"],
+        [PIObserver observerOf:self keyPath:@"retro"],
+        [PIObserver observerOf:self keyPath:@"fido"],
+        [PIObserver observerOf:self keyPath:@"guidance"],
+        [PIObserver observerOf:self keyPath:@"surgeon"]] block:^(BOOL combinedValue) {
             NSLog(@"All systems go!");
         }];
-    
 }
 
 - (void)handleSwitch:(id)sender {
