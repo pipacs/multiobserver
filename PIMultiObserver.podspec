@@ -2,7 +2,7 @@
 
 Pod::Spec.new do |s|
   s.name = "PIMultiObserver"
-  s.version = "0.1.1"
+  s.version = "1.0.0"
   s.summary = "Controller combine multiple observations to trigger a single action"
   s.description = <<-DESC
 This Objective C framework allows combining multiple key-value observations,
