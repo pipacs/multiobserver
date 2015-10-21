@@ -1,6 +1,10 @@
 # Xcode
+<<<<<<< HEAD
 #
 build/
+=======
+build/*
+>>>>>>> 676a8d0dea5a6dd4f415b30cf0ef18119bc220cf
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -10,6 +14,7 @@ build/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata
+<<<<<<< HEAD
 *.xccheckout
 *.moved-aside
 DerivedData
@@ -24,3 +29,11 @@ DerivedData
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
 #Pods/
+=======
+profile
+*.moved-aside
+*.xccheckout
+
+# OSX artifacts
+.DS_Store
+>>>>>>> 676a8d0dea5a6dd4f415b30cf0ef18119bc220cf

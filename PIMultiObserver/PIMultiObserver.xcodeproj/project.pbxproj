@@ -1,0 +1,367 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		798301681BD79B64002DAF6A /* PIObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 798301671BD79B64002DAF6A /* PIObserver.m */; settings = {ASSET_TAGS = (); }; };
+		79925E421BD77F6F003590C5 /* PIMultiObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 79925E411BD77F6F003590C5 /* PIMultiObserver.m */; settings = {ASSET_TAGS = (); }; };
+		79FB862D1BD6627000706D74 /* PIMultiObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FB862C1BD6627000706D74 /* PIMultiObserverTests.m */; };
+		79FB862F1BD6627000706D74 /* libPIMultiObserver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79FB86301BD6627000706D74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79E424741BD4DDB0007AC193 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79E4247B1BD4DDB0007AC193;
+			remoteInfo = PIMultiObserver;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		79E4247A1BD4DDB0007AC193 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		798301661BD79B64002DAF6A /* PIObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIObserver.h; sourceTree = SOURCE_ROOT; };
+		798301671BD79B64002DAF6A /* PIObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIObserver.m; sourceTree = SOURCE_ROOT; };
+		79925E401BD77F6F003590C5 /* PIMultiObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIMultiObserver.h; sourceTree = SOURCE_ROOT; };
+		79925E411BD77F6F003590C5 /* PIMultiObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIMultiObserver.m; sourceTree = SOURCE_ROOT; };
+		79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPIMultiObserver.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		79FB862A1BD6627000706D74 /* PIMultiObserverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PIMultiObserverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79FB862C1BD6627000706D74 /* PIMultiObserverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIMultiObserverTests.m; sourceTree = "<group>"; };
+		79FB862E1BD6627000706D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		79E424791BD4DDB0007AC193 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79FB86271BD6627000706D74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79FB862F1BD6627000706D74 /* libPIMultiObserver.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		79E424731BD4DDB0007AC193 = {
+			isa = PBXGroup;
+			children = (
+				79E4247E1BD4DDB0007AC193 /* PIMultiObserver */,
+				79FB862B1BD6627000706D74 /* PIMultiObserverTests */,
+				79E4247D1BD4DDB0007AC193 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		79E4247D1BD4DDB0007AC193 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */,
+				79FB862A1BD6627000706D74 /* PIMultiObserverTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79E4247E1BD4DDB0007AC193 /* PIMultiObserver */ = {
+			isa = PBXGroup;
+			children = (
+				79925E401BD77F6F003590C5 /* PIMultiObserver.h */,
+				79925E411BD77F6F003590C5 /* PIMultiObserver.m */,
+				798301661BD79B64002DAF6A /* PIObserver.h */,
+				798301671BD79B64002DAF6A /* PIObserver.m */,
+			);
+			path = PIMultiObserver;
+			sourceTree = "<group>";
+		};
+		79FB862B1BD6627000706D74 /* PIMultiObserverTests */ = {
+			isa = PBXGroup;
+			children = (
+				79FB862C1BD6627000706D74 /* PIMultiObserverTests.m */,
+				79FB862E1BD6627000706D74 /* Info.plist */,
+			);
+			path = PIMultiObserverTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		79E4247B1BD4DDB0007AC193 /* PIMultiObserver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79E424851BD4DDB0007AC193 /* Build configuration list for PBXNativeTarget "PIMultiObserver" */;
+			buildPhases = (
+				79E424781BD4DDB0007AC193 /* Sources */,
+				79E424791BD4DDB0007AC193 /* Frameworks */,
+				79E4247A1BD4DDB0007AC193 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PIMultiObserver;
+			productName = PIMultiObserver;
+			productReference = 79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		79FB86291BD6627000706D74 /* PIMultiObserverTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79FB86341BD6627000706D74 /* Build configuration list for PBXNativeTarget "PIMultiObserverTests" */;
+			buildPhases = (
+				79FB86261BD6627000706D74 /* Sources */,
+				79FB86271BD6627000706D74 /* Frameworks */,
+				79FB86281BD6627000706D74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79FB86311BD6627000706D74 /* PBXTargetDependency */,
+			);
+			name = PIMultiObserverTests;
+			productName = PIMultiObserverTests;
+			productReference = 79FB862A1BD6627000706D74 /* PIMultiObserverTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79E424741BD4DDB0007AC193 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Akos Polster";
+				TargetAttributes = {
+					79E4247B1BD4DDB0007AC193 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+					79FB86291BD6627000706D74 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 79E424771BD4DDB0007AC193 /* Build configuration list for PBXProject "PIMultiObserver" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 79E424731BD4DDB0007AC193;
+			productRefGroup = 79E4247D1BD4DDB0007AC193 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				79E4247B1BD4DDB0007AC193 /* PIMultiObserver */,
+				79FB86291BD6627000706D74 /* PIMultiObserverTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79FB86281BD6627000706D74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79E424781BD4DDB0007AC193 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				798301681BD79B64002DAF6A /* PIObserver.m in Sources */,
+				79925E421BD77F6F003590C5 /* PIMultiObserver.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79FB86261BD6627000706D74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79FB862D1BD6627000706D74 /* PIMultiObserverTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79FB86311BD6627000706D74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79E4247B1BD4DDB0007AC193 /* PIMultiObserver */;
+			targetProxy = 79FB86301BD6627000706D74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		79E424831BD4DDB0007AC193 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		79E424841BD4DDB0007AC193 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		79E424861BD4DDB0007AC193 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		79E424871BD4DDB0007AC193 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		79FB86321BD6627000706D74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PIMultiObserverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pipacs.PIMultiObserverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		79FB86331BD6627000706D74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PIMultiObserverTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pipacs.PIMultiObserverTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		79E424771BD4DDB0007AC193 /* Build configuration list for PBXProject "PIMultiObserver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79E424831BD4DDB0007AC193 /* Debug */,
+				79E424841BD4DDB0007AC193 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79E424851BD4DDB0007AC193 /* Build configuration list for PBXNativeTarget "PIMultiObserver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79E424861BD4DDB0007AC193 /* Debug */,
+				79E424871BD4DDB0007AC193 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79FB86341BD6627000706D74 /* Build configuration list for PBXNativeTarget "PIMultiObserverTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79FB86321BD6627000706D74 /* Debug */,
+				79FB86331BD6627000706D74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 79E424741BD4DDB0007AC193 /* Project object */;
+}
