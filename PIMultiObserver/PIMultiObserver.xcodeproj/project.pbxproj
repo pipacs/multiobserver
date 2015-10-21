@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		798301681BD79B64002DAF6A /* PIObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 798301671BD79B64002DAF6A /* PIObserver.m */; settings = {ASSET_TAGS = (); }; };
 		79925E421BD77F6F003590C5 /* PIMultiObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 79925E411BD77F6F003590C5 /* PIMultiObserver.m */; settings = {ASSET_TAGS = (); }; };
 		79FB862D1BD6627000706D74 /* PIMultiObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FB862C1BD6627000706D74 /* PIMultiObserverTests.m */; };
 		79FB862F1BD6627000706D74 /* libPIMultiObserver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */; settings = {ASSET_TAGS = (); }; };
@@ -35,6 +36,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		798301661BD79B64002DAF6A /* PIObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIObserver.h; sourceTree = SOURCE_ROOT; };
+		798301671BD79B64002DAF6A /* PIObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIObserver.m; sourceTree = SOURCE_ROOT; };
 		79925E401BD77F6F003590C5 /* PIMultiObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIMultiObserver.h; sourceTree = SOURCE_ROOT; };
 		79925E411BD77F6F003590C5 /* PIMultiObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIMultiObserver.m; sourceTree = SOURCE_ROOT; };
 		79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPIMultiObserver.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,6 +88,8 @@
 			children = (
 				79925E401BD77F6F003590C5 /* PIMultiObserver.h */,
 				79925E411BD77F6F003590C5 /* PIMultiObserver.m */,
+				798301661BD79B64002DAF6A /* PIObserver.h */,
+				798301671BD79B64002DAF6A /* PIObserver.m */,
 			);
 			path = PIMultiObserver;
 			sourceTree = "<group>";
@@ -186,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				798301681BD79B64002DAF6A /* PIObserver.m in Sources */,
 				79925E421BD77F6F003590C5 /* PIMultiObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

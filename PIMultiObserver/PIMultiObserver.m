@@ -8,10 +8,10 @@
 
 #import "PIMultiObserver.h"
 
-static void * const Context = (void *)&Context; ///< Context of our observers
+static void * const Context = (void *)&Context; ///< Context of our Cocoa observers
 
 // Keys to observation dictionaries
-static NSString * const KeyProperties = @"op";
+static NSString * const KeyObservers = @"ob";
 static NSString * const KeyBlock = @"b";
 static NSString * const KeyEvaluator = @"e";
 
@@ -36,7 +36,7 @@ static NSString * const KeyKeyPath = @"p";
 }
 
 - (void)dealloc {
-    /// Remove Cocoa observations
+    /// Remove Cocoa observers
     for (NSDictionary *key in self.observations.allKeys) {
         NSObject *object = key[KeyObject];
         NSString *keyPath = key[KeyKeyPath];
@@ -60,19 +60,17 @@ static NSString * const KeyKeyPath = @"p";
 #pragma mark - Internal
 
 /// Set up an observation with the given properties, evaluator and notification block
-- (void)addMultiObserver:(NSArray *)objectsAndKeyPaths evaluator:(SEL)evaluator block:(PIMONotificationBlock)block {
+- (void)addMultiObserver:(NSArray<PIObserver *> *)observers evaluator:(SEL)evaluator block:(PIMONotificationBlock)block {
     // Create an "observation", which is just a dictionary containing the method parameters
-    NSDictionary *observation = @{KeyProperties: objectsAndKeyPaths, KeyBlock: block, KeyEvaluator: NSStringFromSelector(evaluator)};
+    NSDictionary *observation = @{KeyObservers: observers, KeyBlock: block, KeyEvaluator: NSStringFromSelector(evaluator)};
 
     // For every property in objectsAndKeyPaths, append the new observation to self.observations[property]
-    for (NSInteger i = 0; i < objectsAndKeyPaths.count; i += 2) {
-        NSObject *object = objectsAndKeyPaths[i];
-        NSString *path = objectsAndKeyPaths[i + 1];
-        NSDictionary *property = @{KeyObject: object, KeyKeyPath: path};
+    for (PIObserver *observer in observers) {
+        NSDictionary *property = @{KeyObject: observer.object, KeyKeyPath: observer.keyPath};
         NSMutableArray *currentObservations = self.observations[property];
         if (!currentObservations) {
             // First observation for the property: Register Cocoa observer
-            [object addObserver:self forKeyPath:path options:0 context:Context];
+            [observer.object addObserver:self forKeyPath:observer.keyPath options:0 context:Context];
             self.observations[property] = [NSMutableArray arrayWithObject:observation];
         } else {
             [currentObservations addObject:observation];
@@ -92,7 +90,7 @@ static NSString * const KeyKeyPath = @"p";
     [invocation invoke];
 }
 
-/// KVO delegate
+/// KVO delegate callback
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
     if (context != Context) {
         return;
@@ -106,12 +104,10 @@ static NSString * const KeyKeyPath = @"p";
 
 /// Call the notification block with the combined AND value of all properties in the observation
 - (void)evalAnd:(NSDictionary *)observation {
-    NSArray *objectsAndPaths = observation[KeyProperties];
+    NSArray<PIObserver *> *observers = observation[KeyObservers];
     BOOL combinedResult = YES;
-    for (NSInteger i = 0; i < objectsAndPaths.count; i += 2) {
-        NSObject *object = objectsAndPaths[i];
-        NSString *keyPath = objectsAndPaths[i + 1];
-        combinedResult &= [[object valueForKeyPath:keyPath] boolValue];
+    for (PIObserver *observer in observers) {
+        combinedResult &= [self evalObserver:observer];
     }
     PIMONotificationBlock block = observation[KeyBlock];
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -121,12 +117,10 @@ static NSString * const KeyKeyPath = @"p";
 
 /// Take the combined AND value of all properties in the observation; if YES, call the notification block
 - (void)evalAllYes:(NSDictionary *)observation {
-    NSArray *objectsAndPaths = observation[KeyProperties];
+    NSArray<PIObserver *> *observers = observation[KeyObservers];
     BOOL combinedResult = YES;
-    for (NSInteger i = 0; i < objectsAndPaths.count; i += 2) {
-        NSObject *object = objectsAndPaths[i];
-        NSString *keyPath = objectsAndPaths[i + 1];
-        combinedResult &= [[object valueForKeyPath:keyPath] boolValue];
+    for (PIObserver *observer in observers) {
+        combinedResult &= [self evalObserver:observer];
         if (!combinedResult) {
             break;
         }
@@ -136,6 +130,18 @@ static NSString * const KeyKeyPath = @"p";
         dispatch_async(dispatch_get_main_queue(), ^{
             block(combinedResult);
         });
+    }
+}
+
+/// Evaluate an observed property into a Boolean
+- (BOOL)evalObserver:(PIObserver *)observer {
+    NSObject *object = observer.object;
+    NSString *keyPath = observer.keyPath;
+    id value = [object valueForKeyPath:keyPath];
+    if (observer.mapper) {
+        return observer.mapper(value);
+    } else {
+        return [value boolValue];
     }
 }
 
