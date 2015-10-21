@@ -13,27 +13,27 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="awR-Rn-Tgg">
-                                <rect key="frame" x="190" y="28" width="51" height="31"/>
+                                <rect key="frame" x="249" y="28" width="51" height="31"/>
                                 <animations/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ITz-aL-Vfd">
-                                <rect key="frame" x="190" y="67" width="51" height="31"/>
+                                <rect key="frame" x="249" y="67" width="51" height="31"/>
                                 <animations/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aaR-Fm-WoX">
-                                <rect key="frame" x="190" y="106" width="51" height="31"/>
+                                <rect key="frame" x="249" y="106" width="51" height="31"/>
                                 <animations/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="F9T-Np-o0t">
-                                <rect key="frame" x="190" y="145" width="51" height="31"/>
+                                <rect key="frame" x="249" y="145" width="51" height="31"/>
                                 <animations/>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KTJ-CS-AKB">
-                                <rect key="frame" x="190" y="184" width="51" height="31"/>
+                                <rect key="frame" x="249" y="184" width="51" height="31"/>
                                 <animations/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BOOSTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQH-5E-DLh">
@@ -72,7 +72,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MU0-dp-H5s">
-                                <rect key="frame" x="20" y="242" width="219" height="30"/>
+                                <rect key="frame" x="50" y="242" width="219" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Launch"/>
                             </button>
@@ -80,6 +80,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="boosterSwitch" destination="awR-Rn-Tgg" id="C55-rA-A6n"/>
                         <outlet property="fidoSwitch" destination="aaR-Fm-WoX" id="6Mg-RK-0cD"/>

@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.version = "0.1.1"
   s.summary = "Controller combine multiple observations to trigger a single action"
   s.description = <<-DESC
-This Objective C frameworks allows combining multiple key-value observations,
+This Objective C framework allows combining multiple key-value observations,
 and calling a single notification callback with the result of the combined 
 observations.
                    DESC
