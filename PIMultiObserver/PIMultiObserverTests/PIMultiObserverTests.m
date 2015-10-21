@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "PIMultiObserver.h"
+#import "../PIMultiObserver.h"
 
 @interface PIMultiObserverTests : XCTestCase
 @property BOOL bool1;

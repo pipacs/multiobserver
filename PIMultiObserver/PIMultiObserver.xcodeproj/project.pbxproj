@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79E424801BD4DDB0007AC193 /* PIMultiObserver.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 79E4247F1BD4DDB0007AC193 /* PIMultiObserver.h */; };
-		79E424821BD4DDB0007AC193 /* PIMultiObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 79E424811BD4DDB0007AC193 /* PIMultiObserver.m */; };
+		79925E421BD77F6F003590C5 /* PIMultiObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 79925E411BD77F6F003590C5 /* PIMultiObserver.m */; settings = {ASSET_TAGS = (); }; };
 		79FB862D1BD6627000706D74 /* PIMultiObserverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 79FB862C1BD6627000706D74 /* PIMultiObserverTests.m */; };
 		79FB862F1BD6627000706D74 /* libPIMultiObserver.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
@@ -30,16 +29,15 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				79E424801BD4DDB0007AC193 /* PIMultiObserver.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		79925E401BD77F6F003590C5 /* PIMultiObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PIMultiObserver.h; sourceTree = SOURCE_ROOT; };
+		79925E411BD77F6F003590C5 /* PIMultiObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PIMultiObserver.m; sourceTree = SOURCE_ROOT; };
 		79E4247C1BD4DDB0007AC193 /* libPIMultiObserver.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPIMultiObserver.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		79E4247F1BD4DDB0007AC193 /* PIMultiObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIMultiObserver.h; sourceTree = "<group>"; };
-		79E424811BD4DDB0007AC193 /* PIMultiObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIMultiObserver.m; sourceTree = "<group>"; };
 		79FB862A1BD6627000706D74 /* PIMultiObserverTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PIMultiObserverTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79FB862C1BD6627000706D74 /* PIMultiObserverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIMultiObserverTests.m; sourceTree = "<group>"; };
 		79FB862E1BD6627000706D74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,8 +83,8 @@
 		79E4247E1BD4DDB0007AC193 /* PIMultiObserver */ = {
 			isa = PBXGroup;
 			children = (
-				79E4247F1BD4DDB0007AC193 /* PIMultiObserver.h */,
-				79E424811BD4DDB0007AC193 /* PIMultiObserver.m */,
+				79925E401BD77F6F003590C5 /* PIMultiObserver.h */,
+				79925E411BD77F6F003590C5 /* PIMultiObserver.m */,
 			);
 			path = PIMultiObserver;
 			sourceTree = "<group>";
@@ -188,7 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79E424821BD4DDB0007AC193 /* PIMultiObserver.m in Sources */,
+				79925E421BD77F6F003590C5 /* PIMultiObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +353,7 @@
 				79FB86331BD6627000706D74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
