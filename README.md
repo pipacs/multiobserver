@@ -23,7 +23,7 @@ The controller is the object that manages multi-observations. To create:
     PIMultiObserver *multiObserver = [[PIMultiObserver alloc] init];
     
 
-### observeAnd: Observing The AND Combination Of Properties
+### Observing The AND Combination Of Properties
 
 The method *observeAnd* takes a list of properties (objects and key paths) to observe, and a notification block. The block will be called whenever any of the properties change, with a Boolean parameter which is the AND combination of the current values of the observed properties:
 
@@ -32,16 +32,17 @@ The method *observeAnd* takes a list of properties (objects and key paths) to ob
 The example app *Checklist* is using this method to observe a set of rocket launch systems (think Apollo 13), in order to enable a "launch" button, when all subsystems are ready, but disable the button otherwise:
 
     [self.multiObserver observeAnd:@[
-        self, @"booster",
-        self, @"retro",
-        self, @"fido",
-        self, @"guidance",
-        self, @"surgeon"] block:^(BOOL allSystemsGo) {
+        [PIObserver observerOf:self keyPath:@"booster"],
+        [PIObserver observerOf:self keyPath@"retro"],
+        [PIObserver observerOf:self keyPath@"fido"],
+        [PIObserver observerOf:self keyPath@"guidance"],
+        [PIObserver observerOf:self keyPath@"surgeon"]] 
+        block:^(BOOL allSystemsGo) {
             self.launchButton.hidden = !allSystemsGo;
         }];
 
 
-### observeAllYes: Observing All Properties To Become YES
+### Observing All Properties To Become YES
 
 The method *observeAllYes* takes a list of properties to observe and a notification block. The block is *only* called whenever all observed properties change to YES:
 
@@ -50,12 +51,29 @@ The method *observeAllYes* takes a list of properties to observe and a notificat
 The example app *Checklist* is using this method to log an "All systems go!" message whenever all rocket launch systems become ready:
 
     [self.multiObserver observeAllYes:@[
-        self, @"booster",
-        self, @"retro",
-        self, @"fido",
-        self, @"guidance",
-        self, @"surgeon"] block:^(BOOL combinedValue) {
+        [PIObserver observerOf:self keyPath:@"booster"],
+        [PIObserver observerOf:self keyPath@"retro"],
+        [PIObserver observerOf:self keyPath@"fido"],
+        [PIObserver observerOf:self keyPath@"guidance"],
+        [PIObserver observerOf:self keyPath@"surgeon"]] 
+        block:^(BOOL combinedValue) {
             NSLog(@"All systems go!");
+        }];
+        
+        
+### Mapping Properties To Booleans
+
+Individual observations (created with *PIObserver*) can map their property values to Booleans using an optional mapper block. 
+
+The example app *Checklist* is mapping its temperature property to YES/NO depending if the temperature is within the range allowed for launch:
+
+    [self.multiObserver observeAnd:@[
+        // ...
+        [PIObserver observerOf:self keyPath:@"temp" mapper:^BOOL(NSNumber *t) {
+            return t.floatValue >= MinLaunchTemp && t.floatValue <= MaxLaunchTemp;
+        }]]
+        block:^(BOOL combinedValue) {
+            self.launchButton.hidden = !combinedValue;
         }];
 
 
@@ -69,6 +87,8 @@ The example app *Checklist* is using this method to log an "All systems go!" mes
 
 * Notification blocks are always called on the main thread
 
+* Mapper blocks are called on the same thread as the Cocoa KVO
+
 
 ## Installation
 
@@ -78,5 +98,3 @@ TBD
 ## License
 
 PIMultiObserver is released under the MIT License. See LICENSE file for more details.
-
-
