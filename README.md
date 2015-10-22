@@ -23,7 +23,7 @@ The controller is the object that manages multi-observations. To create:
     PIMultiObserver *multiObserver = [[PIMultiObserver alloc] init];
     
 
-### Observing The And Combination Of Properties
+### Observing The AND Combination Of Properties
 
 The method *observeAnd* takes a list of properties (objects and key paths) to observe, and a notification block. The block will be called whenever any of the properties change, with a Boolean parameter which is the AND combination of the current values of the observed properties:
 
