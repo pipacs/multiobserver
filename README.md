@@ -2,11 +2,9 @@
 
 Combine multiple observations to trigger a single action
 
-
 ## Overview
 
 This Objective C frameworks allows combining multiple key-value observations, and calling a single notification callback with the result of the combined observations.
-
 
 ## Usage
 
@@ -17,11 +15,10 @@ Example apps are included with this project. Here are the main use cases:
 The controller is the object that manages multi-observations. To create:
 
     #import <PIMultiObserver/PIMultiObserver.h>
-    
+
     ...
-    
+
     PIMultiObserver *multiObserver = [[PIMultiObserver alloc] init];
-    
 
 ### Observing The AND Combination Of Properties
 
@@ -33,34 +30,32 @@ The example app *Checklist* is using this method to observe a set of rocket laun
 
     [self.multiObserver observeAnd:@[
         [PIObserver observerOf:self keyPath:@"booster"],
-        [PIObserver observerOf:self keyPath@"retro"],
-        [PIObserver observerOf:self keyPath@"fido"],
-        [PIObserver observerOf:self keyPath@"guidance"],
-        [PIObserver observerOf:self keyPath@"surgeon"]] 
+        [PIObserver observerOf:self keyPath:@"retro"],
+        [PIObserver observerOf:self keyPath:@"fido"],
+        [PIObserver observerOf:self keyPath:@"guidance"],
+        [PIObserver observerOf:self keyPath:@"surgeon"]] 
         block:^(BOOL allSystemsGo) {
             self.launchButton.hidden = !allSystemsGo;
         }];
-
 
 ### Observing All Properties To Become YES
 
 The method *observeAllYes* takes a list of properties to observe and a notification block. The block is *only* called whenever all observed properties change to YES:
 
     - (void)observerAllYes:(NSArray *)objectsAndKeyPaths block:(PIMONotificationBlock)block;
-    
+
 The example app *Checklist* is using this method to log an "All systems go!" message whenever all rocket launch systems become ready:
 
     [self.multiObserver observeAllYes:@[
         [PIObserver observerOf:self keyPath:@"booster"],
-        [PIObserver observerOf:self keyPath@"retro"],
-        [PIObserver observerOf:self keyPath@"fido"],
-        [PIObserver observerOf:self keyPath@"guidance"],
-        [PIObserver observerOf:self keyPath@"surgeon"]] 
+        [PIObserver observerOf:self keyPath:@"retro"],
+        [PIObserver observerOf:self keyPath:@"fido"],
+        [PIObserver observerOf:self keyPath:@"guidance"],
+        [PIObserver observerOf:self keyPath:@"surgeon"]]
         block:^(BOOL combinedValue) {
             NSLog(@"All systems go!");
         }];
-        
-        
+
 ### Mapping Properties To Booleans
 
 Individual observations (created with *PIObserver*) can map their property values to Booleans using an optional mapper block. 
@@ -76,7 +71,6 @@ The example app *Checklist* is mapping its temperature property to YES/NO depend
             self.launchButton.hidden = !combinedValue;
         }];
 
-
 ## Implementation Details
 
 * Multi-observations are implemented using Cocoa key-value observations
@@ -89,12 +83,10 @@ The example app *Checklist* is mapping its temperature property to YES/NO depend
 
 * Mapper blocks are called on the same thread as the Cocoa KVO
 
-
 ## Installation
 
 TBD
 
-
 ## License
 
-PIMultiObserver is released under the MIT License. See LICENSE file for more details.
+PIMultiObserver is released under the MIT License. See _LICENSE_ for more details.
