@@ -28,7 +28,7 @@ The method *observeAnd* takes a list of properties (objects and key paths) to ob
 
 The example app *Checklist* is using this method to observe a set of rocket launch systems (think Apollo 13), in order to enable a "launch" button, when all subsystems are ready, but disable the button otherwise:
 
-    [self.multiObserver observeAnd:@[
+    [multiObserver observeAnd:@[
         [PIObserver observerOf:self keyPath:@"booster"],
         [PIObserver observerOf:self keyPath:@"retro"],
         [PIObserver observerOf:self keyPath:@"fido"],
@@ -46,7 +46,7 @@ The method *observeAllYes* takes a list of properties to observe and a notificat
 
 The example app *Checklist* is using this method to log an "All systems go!" message whenever all rocket launch systems become ready:
 
-    [self.multiObserver observeAllYes:@[
+    [multiObserver observeAllYes:@[
         [PIObserver observerOf:self keyPath:@"booster"],
         [PIObserver observerOf:self keyPath:@"retro"],
         [PIObserver observerOf:self keyPath:@"fido"],
@@ -60,9 +60,9 @@ The example app *Checklist* is using this method to log an "All systems go!" mes
 
 Individual observations (created with *PIObserver*) can map their property values to Booleans using an optional mapper block. 
 
-The example app *Checklist* is mapping its temperature property to YES/NO depending if the temperature is within the range allowed for launch:
+The example app *Checklist* is mapping its temperature property to YES/NO depending if the temperature is within an allowed range:
 
-    [self.multiObserver observeAnd:@[
+    [multiObserver observeAnd:@[
         // ...
         [PIObserver observerOf:self keyPath:@"temp" mapper:^BOOL(NSNumber *t) {
             return t.floatValue >= MinLaunchTemp && t.floatValue <= MaxLaunchTemp;
@@ -85,7 +85,9 @@ The example app *Checklist* is mapping its temperature property to YES/NO depend
 
 ## Installation
 
-TBD
+Manual installation: Add the source files from *PIMultiObserver* to your project.
+
+CocaPods: Coming soon.
 
 ## License
 
